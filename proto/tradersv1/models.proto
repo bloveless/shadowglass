@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package traders;
+
+message GetMyShipsRequest {}
+
+message Ship {
+  string id = 1;
+}
+
+message Ships {
+  repeated Ship ships = 1;
+}

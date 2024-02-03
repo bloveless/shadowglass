@@ -1,0 +1,22 @@
+version: v1
+managed:
+  enabled: true
+  go_package_prefix:
+    default: shadowglass/internal/gen
+plugins:
+  - plugin: buf.build/protocolbuffers/go:v1.31.0
+    out: internal/gen
+    opt: paths=source_relative
+  - plugin: go-wasm
+    out: internal/gen
+    opt: paths=source_relative
+    path: ./build/protoc-gen-go-wasm
+#  - plugin: buf.build/connectrpc/go:v1.12.0
+#    out: internal/gen
+#    opt: paths=source_relative
+#  - plugin: buf.build/bufbuild/es
+#    opt: target=ts
+#    out: web/src/lib/gen
+#  - plugin: buf.build/connectrpc/es
+#    opt: target=ts
+#    out: web/src/lib/gen

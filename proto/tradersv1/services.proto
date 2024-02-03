@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package traders;
+
+import "tradersv1/models.proto";
+
+service Traders {
+  rpc GetMyShips(GetMyShipsRequest) returns (Ships);
+}
